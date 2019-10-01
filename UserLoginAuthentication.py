@@ -3,13 +3,17 @@
 # Importing The GetPass Module To Hide The Password While Typed
 import getpass
 
+import os
+
 # User Class
 class User:
 
     # Initializing Admin Credentials Stored In A Tuple Which Will Never Change
     # Instance Variable
     # Mimicing Database
-    admin_credentials = [("admin", "pass123")]
+    passwordFile = open(r'C:¥¥Users¥jeetkhondker¥Projects¥console-projects¥UserLoginAuthentication¥password_db.txt')
+    secretPassword = passwordFile.read()
+    admin_credentials = [("admin", secretPassword)]
 
     # User Initialization
     def __init__(self, username, password):
